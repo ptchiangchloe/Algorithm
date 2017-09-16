@@ -56,6 +56,21 @@ Anytime if we found a input from one side and the other side is not None, we sti
 
 If the root value is one of the values from the input nodes. we also will return the root value since the root value will be the bigger common factor between those two input nodes.
 
+The space efficiency complexity is O(n), n is for the nodes in the tree. The time efficiency complexity is O(n), n is for the time to traverse the tree.
+
+## Nth number from the End.
+
+This is a algorithm to find the value of the node in a specific location of a linked list.
+
+First, test out the edge case to make sure the input number is not a negative number.
+
+Then, user two pointers at the head to start in different time, when the fast pointer move head to make the distance as input number between the fast pointer and the slower, then the two can move together until the  fast pointer hits to the end of the list. At that moment, the slow pointer will be located at the nth node from the end.
+
+The space efficiency of the operation is O(n), since the only space we need is for storing the linked list. The time efficiency complexity is O(n) as well, since we only need to walkthrough the link once.
+
+
+
+
 
 
 
