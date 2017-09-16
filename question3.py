@@ -75,16 +75,11 @@ class Weighted_graph:
 		"""
 		Joins 2 vertex together
 		"""
-		print vertex1
-		print vertex2
 		index1 = self.__findset(vertex1)
 		index2 = self.__findset(vertex2)
-		print index1
-		print index2
 		for element in self.vertices[index2]:
 			self.vertices[index1].append(element)
 		self.vertices.pop(index2)
-		print self.vertices
 
 	def __makeadjacencylist(self, adjacency_list, current_edge_from, current_edge_to, weight):
 		if current_edge_from in adjacency_list:
@@ -108,27 +103,19 @@ class Weighted_graph:
 			i = 0
 			adjacency_list = {}
 			while len(self.vertices) > 1:
-				print 'this time the edge is {0}'.format(self.edges[i])
 				if self.__findset(self.edges[i][0]) != self.__findset(self.edges[i][1]):
 					# if the two vertices are in different subset in the vertices set, that means they
 					# still can be unioned together.
 					# if the two vertices are already in the same subset in the vertices set, that means
 					# they have already been unioned together with the minimum spanning
-					print "({0}, {0}) edge selected.".format(self.edges[i][0], self.edges[i][1])
-					print "the edge weight is {0}".format(self.weight[i])
 					weight = self.weight[i]
 					current_edge_from = self.edges[i][0]
-					print "current edge from is {0}".format(current_edge_from)
 					current_edge_to = self.edges[i][1]
 					self.__makeadjacencylist(adjacency_list, current_edge_from, current_edge_to, weight)
 
 					current_edge_from = self.edges[i][1]
-					print "current edge from is {0}".format(current_edge_from)
 					current_edge_to = self.edges[i][0]
 					self.__makeadjacencylist(adjacency_list, current_edge_from, current_edge_to, weight)
-
-					print "current adjacency_list is {0}".format(adjacency_list)
-
 					self.__union(self.edges[i][0], self.edges[i][1])
 
 				i += 1

@@ -38,9 +38,6 @@ def question4(T, root, n1, n2):
             else:
                 root_right = i
 
-    print 'root_left: {0}'.format(root_left)
-    print 'root_right: {0}'.format(root_right)
-
     left = question4(T, root_left, n1, n2 )
     right = question4(T, root_right, n1, n2)
 
