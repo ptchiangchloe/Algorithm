@@ -4,23 +4,39 @@
 
 The fist algorithm is to check a string if it's an anagram for another string as its substring.
 
-First, the algorithm will check the edge cases to see if the inputs are empty strings. Then use reverse function to reverse the string. If the string is in the another string. Then it will return True.
+First, create a helper function to check if two strings are anagram.
+In the helper function, use the sorting algorithm to sort out two lists that the elements in the each list represents each string. For the helper function, the time efficiency complexity is O(n*log(n)) since we used the sorting algorithm and the n represents the items in a the list, the space algorithm will be O(n) since we will use two lists to store the string data.
+
+Then we conduct our main algorithm, define the lengths of two input strings, then we will use two pointers to navigate the substrings for making comparison in the is_anagram helper function.
+
+In the main operation, the time complexity is O(n) since we need find all the substring combinations in the string S, the space complexity is O(n).
 
 The time efficiency is O(n) and the space efficiency is O(1).
 
-## 2 The longest palindromic substring
+## 2 The longest palindromic substring (Monacher Algorithm)
 
-The second algorithm is to find the longest palindromic substring for the input string.
+First, use a helper function called interleave, return a interleaved version of the given string. 'aaa' --> '#a#a#a'.
+Thanks to this function, we don't have to deal with even/odd length issue of
+palindrome.
 
-First, test out the edge case that when the input string is a empty string. It will return None.
+Then, computes length of the longest palindromic substring centered on each character
+in the given string. The idea behind this algorithm is to reuse previously
+computed values whenever possible(palindromic and symmetric).
 
-Second, make sure the testing string is all lowercase.
-
-Then, create a results list that will contain all the substring combinations in the array by using nested loops.
-
-Last, find out the longest string item in the results list.
-
-The time efficiency is O(n**n) and the space efficiency will be O(n).
+Example (interleaved string):
+```
+i 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22
+s # a # b # c # q # q #  q  #  q  #  q  #  q  #  x  #  y  #
+P 0 1 0 1 0 1 0 1 2 3 4  5  6  5  4  ?
+                    ^       ^        ^        ^
+                  mirror   center  current   right
+```
+We're at index 15 wondering shall we compute (costly) or reuse. The mirror value
+for 15 is (center is in 12 which is defined by the current targeting palindrome). P[mirror] = 3 which means a palindrome of length 3 is
+3 is centered at this index. A palindrome of same length would be placed in index 15,
+if 15 + 3 <= (right border of large palindrome centered in 12). This condition is satisfied,
+so we can reuse value from index 9 and avoid computation.
+"""
 
 ## 3 The minimum spanning tree graph algorithm
 
@@ -67,14 +83,3 @@ First, test out the edge case to make sure the input number is not a negative nu
 Then, user two pointers at the head to start in different time, when the fast pointer move head to make the distance as input number between the fast pointer and the slower, then the two can move together until the  fast pointer hits to the end of the list. At that moment, the slow pointer will be located at the nth node from the end.
 
 The space efficiency of the operation is O(n), since the only space we need is for storing the linked list. The time efficiency complexity is O(n) as well, since we only need to walkthrough the link once.
-
-
-
-
-
-
-
-
-
-
-Write up an explanation for each question in a single separate text file (called "explanations.txt"). Your paragraph should not be a detailed walkthrough of the code you provided, but provide your reasoning behind decisions made in the code. For example, why did you use that data structure? You also need to explain the efficiency (time and space) of your solution.
