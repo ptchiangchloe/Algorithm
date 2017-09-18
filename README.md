@@ -9,9 +9,7 @@ In the helper function, use the sorting algorithm to sort out two lists that the
 
 Then we conduct our main algorithm, define the lengths of two input strings, then we will use two pointers to navigate the substrings for making comparison in the is_anagram helper function.
 
-In the main operation, the time complexity is O(n) since we need find all the substring combinations in the string S, the space complexity is O(n).
-
-The time efficiency is O(n) and the space efficiency is O(1).
+The time efficiency is O(nlog(t)) since the operation involves sorting and the space efficiency is O(len(t)) for storing the sorting lists.
 
 ## 2. The longest palindromic substring (Monacher Algorithm)
 

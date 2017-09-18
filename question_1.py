@@ -8,6 +8,7 @@
 # @param {string, string} input strings
 # @return {bool} if string are anagram of each other or not
 def is_anagram(s1, s2):
+
     s1 = list(s1)
     s2 = list(s2)
 
@@ -21,6 +22,8 @@ def is_anagram(s1, s2):
 # @params {string, string} input strings
 # @return {bool} Question1 answer
 def question1(s, t):
+    if s == None or t == None:
+        return False
     match_length = len(t)
     pattern_length = len(s)
 
@@ -38,17 +41,17 @@ print question1("", "")
 # two empty strings have the same values
 
 # Case 2: question1("Hello", "llo" -> True
-print question1("Hello", "llo")
-# string with 3 letters same as in order in S
+print question1("Hello", "lol")
+# string with 3 letters not same as in order as S
 
 # Case 3: question1("Hello", "le") -> True
 print question1("Hello", "le")
 # string with 2 letters with new letter not in string S
 
 # Case 4: question1("Hello", "Helloo") -> False
-print question1("Hello", "Helloo")
-# string t's length is greater than string S
+print question1("Hello", "Helloobr")
+# substring t's length is greater than string S
 
 # Case 5: question1("Hello", "Hello") -> True
-print question1("Hello", "Hello")
+print question1("Hello", None)
 # String t has the same value as String S
