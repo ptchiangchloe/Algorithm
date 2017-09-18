@@ -36,7 +36,9 @@ for 15 is (center is in 12 which is defined by the current targeting palindrome)
 3 is centered at this index. A palindrome of same length would be placed in index 15,
 if 15 + 3 <= (right border of large palindrome centered in 12). This condition is satisfied,
 so we can reuse value from index 9 and avoid computation.
-"""
+
+The time efficiency is O(n) since we only need to loop through the whole list once.
+The space efficiency is O(n).
 
 ## 3 The minimum spanning tree graph algorithm
 
