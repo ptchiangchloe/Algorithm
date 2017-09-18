@@ -1,6 +1,6 @@
 ### Algorithm Practice
 
-## 1 Anagram Checker
+## 1. Anagram Checker
 
 The fist algorithm is to check a string if it's an anagram for another string as its substring.
 
@@ -13,7 +13,7 @@ In the main operation, the time complexity is O(n) since we need find all the su
 
 The time efficiency is O(n) and the space efficiency is O(1).
 
-## 2 The longest palindromic substring (Monacher Algorithm)
+## 2. The longest palindromic substring (Monacher Algorithm)
 
 First, use a helper function called interleave, return a interleaved version of the given string. 'aaa' --> '#a#a#a'.
 Thanks to this function, we don't have to deal with even/odd length issue of
@@ -40,7 +40,7 @@ so we can reuse value from index 9 and avoid computation.
 The time efficiency is O(n) since we only need to loop through the whole list once.
 The space efficiency is O(n).
 
-## 3 The minimum spanning tree graph algorithm
+## 3. The minimum spanning tree graph algorithm
 
 The minimum spanning tree of a weighted undirected graph is an algorithm sums up the minimum
 weight of the edges that connects all the vertices on the graph.
@@ -58,7 +58,7 @@ The reasoning behind the algorithm is to find the smallest combinations in terms
 
 The time efficiency of this algorithm is O(Elog(E) + E), the Elog(E) is for sorting and E is for evaluating each edge when it comes to merge vertices into one big set. The space efficiency of the algorithm is O(V+E+A), V is for storing vertices in a list, E is for storing all the edges and their weight in a list, A is for storing adjacency_list for the return value in the end of this algorithm.
 
-## 4 Find the least common ancestor
+## 4. Find the least common ancestor
 
 The mission of this algorithm is to find the lowest common ancestor in a Binary Tree.
 
@@ -76,7 +76,7 @@ If the root value is one of the values from the input nodes. we also will return
 
 The space efficiency complexity is O(n), n is for the nodes in the tree. The time efficiency complexity is O(n), n is for the time to traverse the tree.
 
-## Nth number from the End.
+## 5. Nth number from the End.
 
 This is a algorithm to find the value of the node in a specific location of a linked list.
 
